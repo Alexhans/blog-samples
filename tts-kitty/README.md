@@ -1,6 +1,6 @@
 # tts-kitty
 
-Simple KittenTTS demo with:
+Simple [KittenTTS](https://github.com/KittenML/KittenTTS) demo with:
 - one-shot generation/playback
 - streaming generation/playback for large text
 - model switching (mini/micro/nano/int8)
