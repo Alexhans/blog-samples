@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kitty-test"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Alex Hans", email = "alexhans.dev@gmail.com" },
+]
+dependencies = [
+  "click",
+  "kittentts @ https://github.com/KittenML/KittenTTS/releases/download/0.8/kittentts-0.8.0-py3-none-any.whl",
+  "soundfile",
+  "pysbd",
+]
+
+[project.scripts]
+kitty-test = "kitty_test.cli:kitty_test"
+
+[tool.hatch.version]
+path = "src/kitty_test/__about__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.envs.default]
+python = "3.11"
+path = ".venv/default"
+installer = "uv"
+dependencies = [
+  "ipython",
+  "pudb",
+]
+
+[tool.hatch.envs.default.env-vars]
+UV_SKIP_WHEEL_FILENAME_CHECK = "1"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/kitty_test tests}"
+
+[tool.coverage.run]
+source_pkgs = ["kitty_test", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/kitty_test/__about__.py",
+]
+
+[tool.coverage.paths]
+kitty_test = ["src/kitty_test", "*/kitty-test/src/kitty_test"]
+tests = ["tests", "*/kitty-test/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
