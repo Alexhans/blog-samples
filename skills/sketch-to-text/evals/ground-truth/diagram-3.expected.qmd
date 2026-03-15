@@ -1,0 +1,33 @@
+---
+title: "Diagram 3: Human and Agent accountability"
+date: "2026-03-15"
+format:
+  html:
+    embed-resources: true
+---
+
+## Diagram 3: Human and Agent accountability
+
+- **(H) Human** doesn't want to do certain chores, and would like to hire a helper.
+- **(H)** can hire a temp worker called **(A) Agent**.
+- But **(H)** is accountable for all of **(A)**'s work.
+- Since **(A)** temp workers can change often, it's not feasible to interview them manually every time.
+
+### Example: Exam scenario
+
+```{mermaid}
+flowchart TD
+    A(("A (Agent)"))
+    exam["Exam 10/10"]
+    subgraph work["Work"]
+        H(("H (Human)"))
+        Awork(("A (Agent)"))
+    end
+
+    A -- "takes" --> exam
+    exam -- "works where Human does" --> work
+```
+
+::: {.callout-caution title="Skill uncertainty notes" collapse="true"}
+- A appears twice (before and inside Work) to show the progression — could be simplified if preferred
+:::

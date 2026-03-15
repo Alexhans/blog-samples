@@ -1,0 +1,40 @@
+---
+title: "Diagram 6: Agent interaction models — Pi-mono vs ChatGPT"
+date: "2026-03-15"
+format:
+  html:
+    embed-resources: true
+---
+
+## Diagram 6: Agent interaction models
+
+Comparison of two agent communication paradigms: proactive sync (Pi-mono) vs. request/response (ChatGPT).
+
+### Pi-mono: event-driven proactive model
+
+```{mermaid}
+flowchart TD
+    agent_p["Agent"]
+    human_p["Human"]
+    signal{Signal}
+
+    agent_p <--> |A/Sync| human_p
+    human_p --> |proactive| agent_p
+    signal -- event --> agent_p
+```
+
+### ChatGPT: request/response model
+
+```{mermaid}
+flowchart LR
+    human_c["Human"]
+    agent_c["Agent"]
+
+    human_c -- send --> agent_c
+    agent_c -- response --> human_c
+```
+
+::: {.callout-caution title="Skill uncertainty notes" collapse="true"}
+- "Pi-mono" — column label; may be a product name or abbreviation ("Pimono"?)
+- Signal diamond below left Agent — interpreted as an event source that triggers the agent
+:::

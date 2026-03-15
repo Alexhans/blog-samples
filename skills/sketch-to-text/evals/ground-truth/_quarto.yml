@@ -1,0 +1,8 @@
+project:
+  type: website
+  output-dir: /tmp/sketch-to-text-preview
+
+website:
+  title: "sketch-to-text ground truth"
+  sidebar:
+    contents: auto

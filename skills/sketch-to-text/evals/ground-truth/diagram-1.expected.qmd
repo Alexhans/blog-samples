@@ -1,0 +1,38 @@
+---
+title: "Diagram 1: Share a game to teach"
+date: "2026-03-15"
+format:
+  html:
+    embed-resources: true
+---
+
+## Diagram 1: I want to share a game to teach
+
+Flowchart for deciding how to create and publish a game using AI assistance.
+
+```{mermaid}
+flowchart TD
+    start("I want to share a game to teach")
+    describe{"Can I describe the game? Intent"}
+    tell_ai("Tell the AI to create game")
+    explain("Explain it to the AI and play up scenarios that you had")
+    iterate["Iterate asking for changes"]
+    client_only{"Only client side?"}
+    firebase[/Firebase/]
+    publish("Publish to easy app")
+
+    start --> describe
+    describe -- yes --> tell_ai
+    describe -- no --> explain
+    explain --> describe
+    tell_ai --> iterate
+    iterate --> iterate
+    iterate --> client_only
+    client_only -- yes --> publish
+    client_only -- no --> firebase
+    firebase --> publish
+```
+
+::: {.callout-caution title="Skill uncertainty notes" collapse="true"}
+- "play up scenarios for head" — last word may be "ahead" or "for real"
+:::

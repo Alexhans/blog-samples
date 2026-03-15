@@ -1,0 +1,37 @@
+---
+title: "Diagram 4: Public transport simulation"
+date: "2026-03-15"
+format:
+  html:
+    embed-resources: true
+---
+
+## Diagram 4: Public transport simulation pipeline
+
+- Bus & tram data from tfl.gov
+- Prices from realprices.info <!-- uncertain: "reel preus.info" — likely a real prices data source -->
+
+```{mermaid}
+flowchart TD
+    bus(("Bus data"))
+    tram(("Tram data"))
+    prices(("Prices"))
+    pt["Public Transport"]
+    sim["Simulation"]
+    qt["Quality Table"]
+    dash((("exposure: Dashboard")))
+    result((("exposure: result_table")))
+
+    bus --> pt
+    tram --> pt
+    prices --> sim
+    pt --> sim
+    sim --> qt
+    sim --> dash
+    sim --> result
+```
+
+::: {.callout-caution title="Skill uncertainty notes" collapse="true"}
+- "reel preus.info" — normalized to "realprices.info"; exact domain unknown
+- "Qvelity Table" / "Quality Table" — handwriting ambiguous between q/Q and v
+:::

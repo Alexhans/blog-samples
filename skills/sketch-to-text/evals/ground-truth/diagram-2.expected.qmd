@@ -1,0 +1,33 @@
+---
+title: "Diagram 2: Boox to Mermaid workflow"
+date: "2026-03-15"
+format:
+  html:
+    embed-resources: true
+---
+
+## Diagram 2: Draw a diagram in Boox and turn it into Mermaid Markdown or Quarto
+
+### Example: Calendar sync
+
+```{mermaid}
+flowchart LR
+    gc["Google Calendar"]
+    wo["Work Outlook"]
+    ab["Anon Blocks"]
+    sa["Share availability"]
+
+    gc <--> |Pull/Push| ab
+    wo --> |Pull/Push| ab
+    ab --> sa
+```
+
+::: {.callout-caution title="Skill uncertainty notes" collapse="true"}
+- Lower arrow from Work Outlook has a second label "Anon blocks" written beside it — likely a repeat label, not a separate node
+
+### Process steps
+
+1. Draw
+2. Export manually
+3. Agent skill → Markdown + Mermaid
+:::

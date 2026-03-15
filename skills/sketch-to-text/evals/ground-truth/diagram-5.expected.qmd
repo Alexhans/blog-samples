@@ -1,0 +1,25 @@
+---
+title: "Diagram 5: Design, Diminish & Jumpstart"
+date: "2026-03-15"
+format:
+  html:
+    embed-resources: true
+---
+
+## Diagram 5: Design, Diminish & Jumpstart
+
+Three pillars of a design framework, each with a sub-goal.
+
+```{mermaid}
+flowchart TD
+    banner["Design, De-Risk & Jumpstart"]
+    intent["Intent"]
+    goals["`Reduce effort
+      Increase ROI
+      Fail fast`"]
+    guardrails["Guardrails"]
+
+    banner -- Design --> intent
+    banner -- De-Risk --> goals
+    banner -- Jumpstart --> guardrails
+```
