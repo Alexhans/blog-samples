@@ -1,0 +1,16 @@
+{
+  "providers": {
+    "llamacpp": {
+      "baseUrl": "http://localhost:8080/v1",
+      "api": "openai-completions",
+      "apiKey": "local-dev",
+      "models": [
+        {
+          "id": "Qwen3.5-35B-A3B-GGUF",
+          "contextWindow": 98304,
+          "maxTokens": 4096
+        }
+      ]
+    }
+  }
+}

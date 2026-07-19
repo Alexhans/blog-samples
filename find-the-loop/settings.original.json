@@ -1,0 +1,15 @@
+{
+  "lastChangelogVersion": "0.80.3",
+  "defaultProvider": "llamacpp",
+  "defaultModel": "Qwen3.5-35B-A3B-GGUF",
+  "defaultThinkingLevel": "medium",
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 8192
+  },
+  "hideThinkingBlock": false,
+  "packages": [
+    "npm:pi-web-access",
+    "git:github.com/huggingface/pi-llama"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "summarizerModel": "llamacpp/Qwen3.5-35B-A3B-GGUF",
+  "reasoning": "off",
+  "historyMaxTokens": 2048,
+  "synthesisTimeoutMs": 120000,
+  "continuationArtifactMode": "off",
+  "agentGuidePath": "AGENTS.md",
+  "agentGuideSyncMode": "off",
+  "midRunGuardEnabled": true,
+  "appendCompactionMetadata": true,
+  "appendReadFileTags": true,
+  "appendModifiedFileTags": true,
+  "promptOverridePolicy": "package-default",
+  "showAfterCompact": false
+}
